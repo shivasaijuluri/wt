@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas styles</title>
+
+</head>
+
+<body style="text-align: center;">
+    <div style="display:inline-block; text-align: center;">
+        <h1>Canvas styles</h1><br><br>
+        <h3>line</h3><br>
+        <canvas id="mycanvas" height="100px" width="200px" style="border: 2px solid #0d0104;"></canvas>
+        <h3>circle</h3><br>
+        <canvas id="myCanvas" height="100px" width="200px" style="border: 2px solid black;"></canvas>
+        <h3>text display</h3><br>
+        <canvas id="myCCanvas" height="100px" width="200px" style="border: 2px solid black;"></canvas>
+        <p>Image to use:</p>
+        <img id="scream"
+            src="https://tse1.mm.bing.net/th?id=OIP.roeJGz3eeyhxK3XRQ0LxpQHaFj&pid=Api&rs=1&c=1&qlt=95&w=137&h=102 alt="
+            nature" width="220" height="277">
+
+        <p>Canvas to fill:</p>
+        <canvas id="myCcanvas" width="250" height="300" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML canvas tag.</canvas>
+
+        <p><button onclick="myCcanvas()">Try it</button></p>
+    </div>
+    <script>
+        var c = document.getElementById("mycanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, 100);
+        ctx.stroke();
+
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "#e44c72";
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+        ctx.fill()
+        ctx.stroke();
+
+        var c = document.getElementById("myCCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.strokeText("Hello World", 10, 50);
+
+        function myCcanvas() {
+            var c = document.getElementById("myCcanvas");
+            var ctx = c.getContext("2d");
+            var img = document.getElementById("scream");
+            ctx.drawImage(img, 10, 10);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette</title>
+    <style>
+        body {
+            transition: background-color 0.5s;
+            text-align: center;
+        }
+
+        .color-container {
+            margin-top: 20px;
+        }
+
+        .color-box {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid #bd3232;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .box-1{
+            background-color: red;
+        }
+        .box-2{
+            background-color: blue;
+        }
+        .box-3{
+            background-color: orange;
+        }    
+        .box-4{
+            background-color:yellow;
+        }
+        .box-5{
+            background-color:lightblue;
+        }
+        .color-name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-size: 12px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Move your mouse over the color boxes to change the background color!</h2>
+
+    <div class="color-container">
+        <div class="color-box box-1" onmouseover="changeBackgroundColor('red')" onmouseout="changeBackgroundColor('white')" title="Red">
+            <!-- <span class="color-name" style="background-color: red;">Red</span> -->
+        </div>
+        <div class="color-box box-2" onmouseover="changeBackgroundColor('blue')" onmouseout="changeBackgroundColor('white')" title="Blue">
+        </div>
+        <div class="color-box box-3" onmouseover="changeBackgroundColor('orange')" onmouseout="changeBackgroundColor('white')" title="Green">
+        </div>
+        <div class="color-box box-4" onmouseover="changeBackgroundColor('yellow')" onmouseout="changeBackgroundColor('white')" title="Yellow">
+        </div>
+        <div class="color-box box-5" onmouseover="changeBackgroundColor('lightblue')" onmouseout="changeBackgroundColor('white')" title="Purple">
+        </div>
+    </div>
+
+    <script>
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>

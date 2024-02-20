@@ -1,0 +1,44 @@
+<!--  Design a HTML web page with at least two <h1>, two images, two buttons, and appropriate 
+CSS to display,
+All<h1>withfont-size12pt, and bold in Verdana font using In line CSS.
+All<img>withbordercoloryellow,thickness10pxusingDocumentLevelCSS.
+All<inputtype=’button’>shouldchangebackgroundcolortoredonmouseoverthemusing External 
+CSS. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+	<style>
+		img{
+			border: 10px yellow solid;
+			margin: 20px;
+		}
+		.imag{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+	</style>
+</head>
+
+
+<body style="text-align:center;">
+	<h1 style="font-size: 12px;font-weight: bold;font-family: Verdana;">Vignan University</h1>
+	<h1 style="font-size: 12px;font-weight: bold;font-family: Verdana;">Dept of ACSE</h1>
+
+	<div class="imag">
+	<img src="img1.jpg" alt="img1" /><br>
+	<img src="img2.png" alt="img2"/><br>
+</div>
+	<input type="button" value="Button" class="colorChangeButton">
+
+
+</body>
+
+</html>

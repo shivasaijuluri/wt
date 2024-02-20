@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        table, th, td{
+            border: 2px solid ;
+            background-color: antiquewhite;
+        }
+        .cont{
+            display: flex;
+            flex-direction: row;
+            margin-left: 12vw
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Line</th>
+            <th>Circle</th>
+            <th>Text</th>
+            <th>emoji</th>
+        </tr>
+        <tr>
+            <td><canvas id="myCanvas" width="200" height="100" ></canvas></td>
+            <td><canvas id="myCanvas1" width="200" height="100" ></canvas></td>
+            <td><canvas id="myCanvas2" width="200" height="100" ></canvas></td>
+            <td><canvas id="myCanvas3" width="200" height="100" ></canvas></td>
+
+        </tr>
+
+    </table><br><br>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(100, 50);
+        ctx.stroke();
+        </script>
+        <script>
+            var c = document.getElementById("myCanvas1");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(100, 50, 40,0, 2 * Math.PI);
+            ctx.stroke();
+            </script>
+            <script>
+                var c = document.getElementById("myCanvas2");
+                var ctx = c.getContext("2d");
+                ctx.font = "30px Lucida Grande";
+                ctx.strokeText("Shiva sai", 30,50);
+            </script>
+            <script>
+            var c = document.getElementById("myCanvas3");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(100, 50, 40,0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = 'yellow';
+            ctx.fill();
+
+            ctx.beginPath();
+            // arc(x, y, radius, startAngle, endAngle, anticlockwise)
+            ctx.arc(80,40,5,0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = 'yellow';
+            ctx.fill();
+
+            ctx.beginPath();
+            // arc(x, y, radius, startAngle, endAngle, anticlockwise)
+            ctx.arc(120,40,5,0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = 'yellow';
+            ctx.fill();
+
+            ctx.beginPath();
+            // arc(x, y, radius, startAngle, endAngle, anticlockwise)
+            ctx.moveTo(80, 60);
+            ctx.lineTo(120, 60);
+            ctx.stroke();
+
+            ctx.beginPath();
+            // arc(x, y, radius, startAngle, endAngle, anticlockwise)
+            ctx.arc(99,62,15, 2 * Math.PI,9.5);
+            ctx.stroke();
+            ctx.fillStyle = 'lightyellow';
+            ctx.fill();
+
+            </script>
+                <script>
+                    var c = document.getElementById("myCanvas4");
+                    var ctx = c.getContext("2d");
+                    ctx.moveTo(40, 10);
+                    ctx.lineTo(185, 80);
+                    ctx.stroke();
+
+                    ctx.moveTo(10, 10);
+                    ctx.lineTo(145, 80);
+                    ctx.stroke();
+
+                    // ctx.moveTo(10, 0);
+                    // ctx.lineTo(10, 20);
+                    // ctx.stroke();
+
+                    ctx.moveTo(195, 70);
+                    ctx.lineTo(195, 90);
+                    ctx.stroke();
+
+
+                    ctx.moveTo(190, 0);
+                    ctx.lineTo(20, 90);
+                    // ctx.lineWidth = 10;
+                    ctx.stroke();
+
+                    
+                    </script>
+<div class="cont">
+    <div class="box">
+<p>Image to use:</p>
+<img id="scream" src="cover.jpg" alt="The Scream" width="220" height="277">
+</div>
+<div class="box">
+<p>Canvas to fill:</p>
+<canvas id="myCanvas5" width="250px" height="300px" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.
+</canvas>
+
+<p><button onclick="myCanvas()">Try it</button></p>
+</div>
+</div>
+<script>
+function myCanvas() {
+  var c = document.getElementById("myCanvas5");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  ctx.drawImage(img, 0, 0, c.width, c.height);
+}
+</script>
+
+
+
+
+
+                
+</body>
+</html>

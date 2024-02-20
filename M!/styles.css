@@ -1,0 +1,44 @@
+styles.css
+
+/* styles.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Header styles */
+.h {
+    color: rgb(0, 252, 42);
+    text-align: center;
+    padding: 20px;
+    background-image: url(' https://img.freepik.com/free-vector/gradient-geometric-background_52683-53401.jpg?w=1060&t=st=1708334235~exp=1708334835~hmac=69b2a728f129479b56ce8f7f9a48a6bd105d8d52eeab9ee2117697687673c81b'); /* Replace with your header image */
+    background-size: cover;
+}
+
+/* Sidebar styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Content area styles */
+td[bgcolor="orange"] {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Footer styles */
+td[bgcolor="skyblue"] {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}

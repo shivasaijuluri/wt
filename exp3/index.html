@@ -1,0 +1,124 @@
+<!-- Design a timetable schedule for your current semester using the Table tag. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        *{
+            text-align: center;
+            padding: 2px;
+            font-family: 'Lucida Sans';
+        }
+        table, th, td{
+        border: 2px solid;
+        text-align: center;
+        background-color:rgb(174, 207, 236);
+        width: 80vw;}
+        .merge{
+            border: 0px;
+            border-left: 2px solid
+        }
+        .break{
+            background-color: bisque;
+            font-weight: 500;
+        }
+        .crt{
+            color: red;
+            border-color: black;
+            font-weight: 500;
+        }
+        .minor{
+            color: blue;
+            border-color: black;font-weight: 500;
+        }
+        .qrlr{
+            color: green;
+            border-color: black;font-weight: 500;
+        }
+        .head{
+            background-color: rgb(0, 255, 174);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+        <th class="head">DEPARTMENT OF ADVANCED COMPUTER SCIENCE & ENGINEERING</th>
+    </tr>
+    <tr>
+        <th class="head">III - II Sem 2023 - 24 TIME - TABLE  </th>
+    </tr><tr>
+        <th class="head">III AIML Section: A</th>
+    </tr>
+    <table>
+    <tr>
+       <td> Day/Hour	</td>
+       <td> 08:15-9:10<br>1</td>
+       <td> 9:10-10:05<br>2</td>
+       <td>10:05-10:20	</td>
+       <td> 10:20-11:15<br>3</td>
+       <td> 11:15-12:10<br>4</td>
+       <td> 12.10-01.05<br>5</td>	
+       <td>01.05-02:00</td>
+       <td> 02:00-02:55<br>6</td>
+       <td class="new"> 02:55-03:50<br>7</td>
+       <td> 03:50-04:45<br>8</td>
+    </tr>
+    <tr>
+        <td> Mon </td>
+        <td> FIP 501 </td>
+        <td> MAD 501</td>
+        <td class="break" rowspan="6">B<br>R<br>E<br>A<br>K</td>
+        <td class="crt" colspan="3">CRT Training </td>	
+        <td class="break" rowspan="6">L<br>U<br>N<br>C<br>H</td>
+        <td colspan="2"> WT(P) 604</td>
+        <td> IDP 604</td>
+     </tr>
+     <tr>
+        <td> Tue </td>
+        <td colspan="2"> WT(P) 604</td>
+        <td colspan="2" > FIP (P)  604	</td>
+        <td>WT 604</td>
+        <td class="minor" colspan="2">Minor/Honor</td>
+        <td> ***</td>
+     </tr>
+     <tr>
+        <td> Wed </td>
+        <td class="minor" colspan="2"> Minor/Honor</td>
+        <td class="crt" colspan="3">CRT Training </td>	
+        <td colspan="2"> MAD(P) 604</td>
+        <td> IDP 604</td>
+     </tr>
+     <tr>
+        <td> Thu </td>
+        <td colspan="2"> RL(P) 604</td>
+        <td> WT 601</td>
+        <td>	FIP 601</td>
+        <td>	MAD 601</td>
+        <td class="minor" colspan="2">Minor/Honor</td>
+        <td> ***</td>
+     </tr>
+     <tr>
+        <td> FRI </td>
+        <td class= "qrlr" colspan="2"> QA & LR(501)</td>
+        <td class="crt" colspan="3">CRT Training </td>	
+        <td colspan="2"> MAD(P) 604</td>
+        <td> ***</td>
+     </tr>
+     <tr>
+        <td> SAT </td>
+        <td class= "qrlr" colspan="2"> QA & LR(501)</td>
+        <td class="crt" colspan="3">CRT Training </td>	
+        <td colspan="2"> RL 501</td>
+        <td> ***</td>
+     </tr>
+</table>
+    </table>
+</body>
+</html>

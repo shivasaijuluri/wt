@@ -1,0 +1,36 @@
+<!-- Design a HTML page having a text box and four buttons viz Factorial, Fibonacci,
+     Prime and Palindrome. When a button is pressed an appropriate java script 
+     function should be called to 
+    display the following:
+    Factorial of that number.
+    Fibonacci series up to that number.
+    Prime numbers up to that number.
+    Is it palindrome or not? -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body style="text-align: center;">
+    <h1>Java Script Operations</h1>
+    <label for="num1">Number :</label>
+    <input type="text" id="numberInput"><br><br>
+    <button onclick="factorial()">factorial</button>
+    <button onclick="Fibbonaci()">Fibbonaci</button>
+    <button onclick="Primenumbers()">Prime numbers</button>
+    <button onclick="Palindrome()">Palindrome</button>
+    <li id="myList"></li>
+    <p id="fact"></p>
+    <p id="fibb"></p>
+    <p id="prime"></p>
+    <p id="palin"></p>
+    <div id="res"> </div>
+    <script src="script.js"></script>
+</body>
+</html>
