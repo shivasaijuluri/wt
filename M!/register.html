@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-size: cover;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            background: transparent;
+            border: 2px solid #365486;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 2px 3px 2px 3px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h2 {
+            color: olivedrab;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        label {
+            color: #333;
+            font-size: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 120px);
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid brown;
+            box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: green;
+        }
+
+        input[type="submit"]:active {
+            background-color: black;
+        }
+
+        /* Adjust the width of mobile number input */
+        input[name="mobile_number"] {
+            width: calc(100% - 120px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <b>Registration Page</b><br><br>
+        <form action="register.php" method="post">
+            <label>Name: <input type="text" name="name" placeholder="Name"></label><br><br>
+            <label>Mobile Number: </label><input type="text" name="mobile_number" placeholder="Mobile Number"><br><br>
+            <label>ID: <input type="text" name="id" placeholder="ID"></label><br><br>
+            <label>Gmail: <input type="text" name="gmail" placeholder="Gmail"></label><br><br>
+            <label>Password: <input type="password" name="password" placeholder="Password" autocomplete="new-password" required=""></label>
+            <br><br>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
