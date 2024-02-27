@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "my_database"; // Default username for XAMPP
 $password = "my_database"; // Default password for XAMPP
@@ -20,7 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row["password"])) {
-            echo "Login successful";
+            echo "Password verified";
+            $_SESSION['user_details'] = $row;
+            header("Location: user_details.php"); 
+            exit();
         } else {
             echo "Incorrect password";
         }

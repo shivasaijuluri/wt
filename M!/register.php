@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "my_database"; // Default username for XAMPP
 $password = "my_database"; // Default password for XAMPP
@@ -22,6 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         echo "Registration successful";
+        header("Location: login.html"); 
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
