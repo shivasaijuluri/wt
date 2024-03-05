@@ -1,5 +1,3 @@
-styles.css
-
 /* styles.css */
 
 /* Body styles */
@@ -8,15 +6,21 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    height: 100vh;
 }
 
 /* Header styles */
 .h {
-    color: rgb(0, 252, 42);
     text-align: center;
-    padding: 20px;
-    background-image: url(' https://img.freepik.com/free-vector/gradient-geometric-background_52683-53401.jpg?w=1060&t=st=1708334235~exp=1708334835~hmac=69b2a728f129479b56ce8f7f9a48a6bd105d8d52eeab9ee2117697687673c81b'); /* Replace with your header image */
-    background-size: cover;
+    padding: 10px 20px; /* Adjusted padding */
+    background-image: url('https://img.freepik.com/free-vector/gradient-geometric-background_52683-53401.jpg?w=1060&t=st=1708334235~exp=1708334835~hmac=69b2a728f129479b56ce8f7f9a48a6bd105d8d52eeab9ee2117697687673c81b');
+    background-size: 100% 100%;
+}
+
+/* Adjusted header height */
+.header {
+    margin: 0;
+    font-size: 24px; /* Adjusted font size */
 }
 
 /* Sidebar styles */
@@ -30,10 +34,15 @@ li {
 }
 
 /* Content area styles */
-td[bgcolor="orange"] {
+td {
     padding: 20px;
     color: white;
     text-align: center;
+}
+
+/* Apply background color to entire column */
+td.bg-grey {
+    background-color: lightgrey;
 }
 
 /* Footer styles */
@@ -43,21 +52,13 @@ td[bgcolor="skyblue"] {
     font-size: 12px;
 }
 
-td[bgcolor="lightgrey"] {
-    text-align: center;
-    display: flex;
-    background-size: cover;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.grp{
+.grp {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.btn{
+.btn {
     padding: 5px;
     margin-right: 10px;
 }
