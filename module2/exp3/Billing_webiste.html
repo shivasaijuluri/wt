@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D-Mart Billing System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="Billing_website.js"></script>
+</head>
+<body>
+  <h1>Billing System</h1>
+  <div class="container">
+
+    <form>
+      <label for="item-name">Item Name:</label>
+      <input type="text" id="item-name">
+      <label for="item-price">Item Price:</label>
+      <input type="number" id="item-price">
+      <label for="item-quantity">Quantity:</label>
+      <input type="number" id="item-quantity">
+      <button type="button" onclick="addItem()">Add Item</button>
+    </form>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="item-list"></tbody>
+    </table>
+    <hr>
+    <div id="total-price"></div>
+    <button type="button" onclick="generateReceipt()">Generate Receipt</button>
+    <button type="button" id="showItemList">Show Items</button>
+    
+    <!-- Payment Form -->
+    <div id="paymentForm" style="display: none;">
+      <br>
+      <div id="countdownTimer"></div>
+      <h2>Payment Details</h2>
+      <form id="paymentDetailsForm">
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required>
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        <button type="button" onclick="processPayment()">Process Payment</button>
+      </form>
+
+
+
+      <div id="paymentDetails" style="display: none;">
+        <h3>Payment Successful!</h3>
+        <p>Card Number: <span id="paymentCardNumber"></span></p>
+        <p>Expiry Date: <span id="paymentExpiryDate"></span></p>
+        <p>CVV: <span id="paymentCVV"></span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light gray background */
+  }
+  
+  .container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ffffff; /* White container background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333333; /* Dark gray heading */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-bottom: 5px;
+  }
+  
+  form input[type="text"],
+  form input[type="number"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ced4da; /* Light gray border */
+    transition: border-color 0.3s ease;
+  }
+  
+  form input[type="text"]:focus,
+  form input[type="number"]:focus {
+    border-color: #6c757d; /* Dark gray border on focus */
+  }
+  
+  button {
+    padding: 12px 24px;
+    background-color: #007bff; /* Blue button */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th,
+  td {
+    border-bottom: 1px solid #dee2e6; /* Light gray border */
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #e9ecef; /* Light gray table header */
+  }
+  
+  #total-price {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  #showItemList {
+    margin-top: 20px;
+  }
+  
