@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #00aa77;
+            background-image: url("zenbg-1.png"), url("zenbg-2.png");
+            background-repeat: repeat-x, repeat;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            color: #007bff;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            text-align: left;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .content h2 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .content p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Welcome</h1>
+        <div class="grp">
+            <form action="login.html">
+                <input class="btn" type="submit" value="Login">
+            </form>
+            <form action="register.html">
+                <input class="btn" type="submit" value="Register">
+            </form>
+        </div>
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Welcome to our website! We aim to provide innovative solutions to make your life easier.</p>
+            <h2>Our Mission</h2>
+            <p>Our mission is to empower individuals and businesses through technology.</p>
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us at support@example.com for any assistance or queries.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -6,61 +6,44 @@
 <body>
     <h2>Personal Information Form</h2>
     <form action="" method="get">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        <label for="age">Age:</label><br>
-        <input type="number" id="age" name="age"><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
         <input type="submit" value="Submit (GET)">
     </form>
 
     <form action="" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        <label for="age">Age:</label><br>
-        <input type="number" id="age" name="age"><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
         <input type="submit" value="Submit (POST)">
     </form>
 
-    <form action="" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        <label for="age">Age:</label><br>
-        <input type="number" id="age" name="age"><br>
-        <input type="hidden" name="form_type" value="request">
-        <input type="submit" value="Submit (REQUEST)">
-    </form>
-
-    <h2>Submitted Information</h2>
-    <h3>Using GET method:</h3>
     <?php
-    if(isset($_GET['name']) && isset($_GET['email']) && isset($_GET['age'])) {
-        echo "Name: " . $_GET['name'] . "<br>";
-        echo "Email: " . $_GET['email'] . "<br>";
-        echo "Age: " . $_GET['age'] . "<br>";
-    }
-    ?>
+    // Retrieving and displaying data using $_REQUEST
+    if ($_SERVER["REQUEST_METHOD"] == "POST" || $_SERVER["REQUEST_METHOD"] == "GET") {
+        if (isset($_REQUEST['name']) && isset($_REQUEST['email']) && isset($_REQUEST['age'])) {
+            $name = $_REQUEST['name'];
+            $email = $_REQUEST['email'];
+            $age = $_REQUEST['age'];
 
-    <h3>Using POST method:</h3>
-    <?php
-    if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['age'])) {
-        echo "Name: " . $_POST['name'] . "<br>";
-        echo "Email: " . $_POST['email'] . "<br>";
-        echo "Age: " . $_POST['age'] . "<br>";
-    }
-    ?>
-
-    <h3>Using REQUEST method:</h3>
-    <?php
-    if(isset($_REQUEST['name']) && isset($_REQUEST['email']) && isset($_REQUEST['age'])) {
-        echo "Name: " . $_REQUEST['name'] . "<br>";
-        echo "Email: " . $_REQUEST['email'] . "<br>";
-        echo "Age: " . $_REQUEST['age'] . "<br>";
+            echo "<h2>Submitted Information (Using \$_REQUEST)</h2>";
+            echo "Name: $name <br>";
+            echo "Email: $email <br>";
+            echo "Age: $age <br>";
+        }
     }
     ?>
 </body>
