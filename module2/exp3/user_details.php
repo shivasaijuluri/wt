@@ -16,7 +16,7 @@ session_start(); // Start the session
         // Display user details
         echo "<p>Name: " . $user['name'] . "</p>";
         echo "<p>Mobile Number: " . $user['mobile_number'] . "</p>";
-        echo "<p>ID: " . $user['id'] . "</p>";
+        echo "<p>ID: " . $user['user_id'] . "</p>";
         echo "<p>Gmail: " . $user['gmail'] . "</p>";
     }
     ?>

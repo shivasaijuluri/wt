@@ -75,15 +75,43 @@
 <body>
     <div class="container">
         <b>Registration Page</b><br><br>
-        <form action="register.php" method="post">
+        <form action="register.php" method="post" onsubmit="return validateForm()">
             <label>Name: <input type="text" name="name" placeholder="Name"></label><br><br>
             <label>Mobile Number: </label><input type="text" name="mobile_number" placeholder="Mobile Number"><br><br>
             <label>ID: <input type="text" name="id" placeholder="ID"></label><br><br>
             <label>Gmail: <input type="text" name="gmail" placeholder="Gmail"></label><br><br>
-            <label>Password: <input type="password" name="password" placeholder="Password" autocomplete="new-password" required=""></label>
+            <label>Password: <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password" required=""></label>
             <br><br>
             <input type="submit" value="Register">
         </form>
     </div>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var mobileNumber = document.getElementsByName("mobile_number")[0].value;
+            var gmail = document.getElementsByName("gmail")[0].value;
+
+            // Password validation
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long");
+                return false;
+            }
+
+            // Mobile number validation
+            if (!/^(\+91)?\d{10}$/.test(mobileNumber)) {
+                alert("Mobile number must have 10 digits and can optionally start with +91");
+                return false;
+            }
+
+            // Email validation
+            if (!/\S+@\S+\.\S+/.test(gmail)) {
+                alert("Invalid email address");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
