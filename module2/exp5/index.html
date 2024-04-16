@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="registrationApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: #f44336;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" ng-controller="RegistrationController">
+        <h2>User Registration</h2>
+        <form name="registrationForm" ng-submit="submitForm()" novalidate>
+            <label>Username:</label><br>
+            <input type="text" name="username" ng-model="user.username" required placeholder="Username"><br>
+            <span class="error-message" ng-show="registrationForm.username.$dirty && registrationForm.username.$error.required">Username is required.</span><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email" ng-model="user.email" required placeholder="Email"><br>
+            <span class="error-message" ng-show="registrationForm.email.$dirty && registrationForm.email.$error.required">Email is required.</span>
+            <span class="error-message" ng-show="registrationForm.email.$dirty && registrationForm.email.$error.email">Invalid email address.</span><br>
+
+            <label>Password:</label><br>
+            <input type="password" name="password" ng-model="user.password" required placeholder="Password"><br>
+            <span class="error-message" ng-show="registrationForm.password.$dirty && registrationForm.password.$error.required">Password is required.</span><br>
+
+            <label>Confirm Password:</label><br>
+            <input type="password" name="confirmPassword" ng-model="user.confirmPassword" required placeholder="Confirm Password" ng-equal-to="user.password"><br>
+            <span class="error-message" ng-show="registrationForm.confirmPassword.$dirty && registrationForm.confirmPassword.$error.required">Please confirm your password.</span>
+            <span class="error-message" ng-show="registrationForm.confirmPassword.$error.equalTo">Passwords do not match.</span><br>
+
+            <button type="submit" ng-disabled="registrationForm.$invalid">Register</button>
+        </form>
+    </div>
+
+    <script>
+        var app = angular.module('registrationApp', []);
+
+        app.controller('RegistrationController', function($scope) {
+            $scope.submitForm = function() {
+                if ($scope.registrationForm.$valid) {
+                    // Here you would typically send the registration data to the server
+                    console.log('Form submitted successfully!');
+                }
+            };
+        });
+
+        app.directive('equalTo', function() {
+            return {
+                require: 'ngModel',
+                link: function(scope, element, attrs, ngModelCtrl) {
+                    var validateEqual = function(value) {
+                        var valid = (value === scope.$eval(attrs.equalTo));
+                        ngModelCtrl.$setValidity('equalTo', valid);
+                        return valid ? value : undefined;
+                    };
+
+                    ngModelCtrl.$parsers.push(validateEqual);
+                    ngModelCtrl.$formatters.push(validateEqual);
+
+                    scope.$watch(attrs.equalTo, function() {
+                        ngModelCtrl.$setViewValue(ngModelCtrl.$viewValue);
+                    });
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

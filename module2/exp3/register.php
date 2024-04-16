@@ -1,8 +1,8 @@
 <?php
 session_start();
 $servername = "localhost";
-$username = "my_database"; // Default username for XAMPP
-$password = "my_database"; // Default password for XAMPP
+$username = "my_database"; 
+$password = "my_database";
 $dbname = "implement_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
