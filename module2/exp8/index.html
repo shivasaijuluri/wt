@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Activity Duration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Activity Duration</h1>
+
+        <!-- Display Last Active Duration -->
+        <div id="lastActiveDuration" style="display: none;">
+            <p><strong>Last Active Duration:</strong> <span id="lastDuration">--:--:--</span></p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2>Login</h2>
+            <form onsubmit="return handleLogin()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Logout Section (Initially Hidden) -->
+        <div id="logoutSection" style="display: none;">
+            <button onclick="handleLogout()">Logout</button>
+            <p><strong>Active Duration:</strong> <span id="activeDuration">--:--:--</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
